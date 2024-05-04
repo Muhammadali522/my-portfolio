@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="./img/myphoto.jpg" alt="My Picture">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span>MUHAMMADALI.</span>
+                    A Web Developer.
+                </h1>
+                <p>
+                    I'm a Web Developer, I love to create beautiful and functional websites.
+                    Semantic professional adaptive layout experience; Knowledge of GitHub. I can understand other people's code at a basic level. I know how to make layout in Figma. I have an analytical mindset, I always try to find a solution to the problem, I am very active, responsible, workaholic, I love to work and develop, my career comes first for me.
+                </p>
+                <!-- <div class="btn-con">
+                    <a href="./pdf/Sunnatbek Yusupov CV.docx" class="main-btn">
+                        <span class="btn-text">Download CV</span>
+                        <span class="btn-icon"><i class="fas fa-download"></i></span>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
+            </div>
+            <div class="about-stats">
+                <h4 class="stat-title">My Skills</h4>
+                <div class="progress-bars">
+                    <div class="progress-bar">
+                        <p class="prog-title">html5</p>
+                        <div class="progress-con">
+                            <p class="prog-text">90%</p>
+                            <div class="progress">
+                                <span class="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">css</p>
+                        <div class="progress-con">
+                            <p class="prog-text">95%</p>
+                            <div class="progress">
+                                <span class="css"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">scss3</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="js"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Tailwind</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="react"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Bootstrap</p>
+                        <div class="progress-con">
+                            <p class="prog-text">87%</p>
+                            <div class="progress">
+                                <span class="node"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">JavaScript</p>
+                        <div class="progress-con">
+                            <p class="prog-text">70%</p>
+                            <div class="progress">
+                                <span class="python"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </section>
+
+        
+        <section class="container" id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
+            </div>
+            <p class="port-text">
+                Here is some of my work that I've done in various programming languages.
+            </p>
+            <div class="portfolios">
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_1.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/1-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/1-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_2.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/2-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_3.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/4-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/4-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_4.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/6-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/6-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_5.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/7-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/7-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_6.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/8-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/8-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_7.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/9-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/9-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_8.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/11-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/11-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_9.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/2.3--lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2.3--lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="img/Screenshot_10.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/2.4-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2.4-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_11.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/2.7-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2.7-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_12.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/2.9-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2.9-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_13.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/muhammadali522/2.11-lesson" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://muhammadali522.github.io/2.11-lesson/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_14.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/1-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/1-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_15.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/2-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/2-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_16.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/3-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/3-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_17.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/4-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/4-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_18.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/5-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/5-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_19.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/6-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/6-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_20.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/7-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/7-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_21.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/8-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/8-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_22.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/9-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/9-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_23.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/10-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/10-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_24.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/11-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/11-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_25.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/12-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/12-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_26.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/13-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/13-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_27.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/14-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/14-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_28.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Muhammadali522/my-portfolio" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://Muhammadali522.github.io/my-portfolio/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- <div class="portfolio-item">
+                    <div class="image">
+                        <img src="./img/Screenshot_14.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/BotirovAli15/1-vazifa" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://botirovali15.github.io/1-vazifa/" class="icon" target="_blank">
+                                <i class="fab fa-chrome"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+        </section>
+        
+        <section class="container contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title margin-conttact">
+                    <h2>Contact <span>Me</span><span class="bg-text"></span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact">
+                        <h4>Contact me here</h4>
+                        <!-- <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In, laborum numquam? Quam excepturi perspiciatis quas quasi.
+                        </p> -->
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location</span>
+                                </div>
+                                <a class="infor-hovers" href="https://maps.app.goo.gl/4VWkxbUds1mUVaJv6" target="_blank">
+                                    : Tashkent , Uzbekistan
+                                </a>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <p>
+                                    <a class="infor-hovers" href="mailto:muhammadaliakmal522@gmail.com" target="_blank">: muhammadaliakmal522</a>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Education</span>
+                                </div>
+                                <p>
+                                    <a  class="infor-hovers" href="https://marsit.uz/" target="_blank">: Mars IT School </a>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Mobile Number</span>
+                                </div>
+                                <p>
+                                    <a  class="infor-hovers" href="tel:+998950057404" target="_blank">: +998 95 005-74-04</a>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-globe-africa"></i>
+                                    <span>Languages</span>
+                                </div>
+                                <p>
+                                    <span>: Uzbek , English, Russian</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <a href="https://t.me/BotirovAli15" target="blank">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://github.com/Muhammadali522" target="blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/BotirovAli15" target="blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-contact">
+                        <form action="" class="contact-form">
+                            <div class="input-control i-c-2">
+                                <input type="text" required placeholder="YOUR NAME">
+                                <input type="email" required placeholder="YOUR EMAIL">
+                            </div>
+                            <div class="input-control">
+                                <input type="text" required placeholder="ENTER SUBJECT">
+                            </div>
+                            <div class="input-control">
+                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                            </div>
+                            <!-- <div class="submit-btn">
+                                <a href="./pdf/Sunnatbek Yusupov CV.docx" class="main-btn">
+                                    <span class="btn-text">Download CV</span>
+                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
+                                </a>
+                            </div> -->
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    <footer>
+        <div class="controls">
+            <div class="control active-btn" data-id="home" >
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="control" data-id="about">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="control" data-id="portfolio">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="control" data-id="contact">
+                <i class="fas fa-envelope-open"></i>
+            </div>
+        </div>
+        <div class="theme-btn">
+            <i class="fas fa-adjust"></i>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
