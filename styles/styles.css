@@ -599,7 +599,7 @@ section {
   margin-left: 3rem;
 }
 .contact-content-con .right-contact .input-control {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 .contact-content-con .right-contact .input-control input, .contact-content-con .right-contact .input-control textarea {
   border-radius: 30px;
@@ -1018,3 +1018,29 @@ div#carousel ~ span:hover {
     font-size: 4rem;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+button {
+  background-color: #2A2E35;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 530px; 
+  border-radius: 30px;
+}
+
+button:hover {
+  background-color: #43474F;
+}
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#status.success {
+  color: green;
+}
+
+#status.error {
+  color: red;
+}
