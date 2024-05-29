@@ -1019,9 +1019,9 @@ div#carousel ~ span:hover {
   }
 }/*# sourceMappingURL=styles.css.map */
 
-button {
-  background-color: #2A2E35;
-  color: white;
+.newBtn {
+  background-color: var(--color-grey-5);
+  color: var(--color-white);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -1030,7 +1030,8 @@ button {
 }
 
 button:hover {
-  background-color: #43474F;
+  background-color:var(--color-secondary);
+  color:black;
 }
 #status {
   margin-top: 10px;
