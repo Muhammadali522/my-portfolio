@@ -1027,13 +1027,14 @@ div#carousel ~ span:hover {
   cursor: pointer;
   width: 530px; 
   border-radius: 30px;
+  transition: 0.5s ease-in-out;
 }
 
 button:hover {
   background-color:var(--color-secondary);
   color:black;
 }
-#status {
+/* #status {
   margin-top: 10px;
   font-size: 14px;
 }
@@ -1044,4 +1045,4 @@ button:hover {
 
 #status.error {
   color: red;
-}
+} */
