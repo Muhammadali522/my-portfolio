@@ -1,8 +1,96 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#03050a"><title>Muhammadali • Birthday System</title><link rel="stylesheet" href="main.css?v=20260814-3"></head><body>
-<canvas id="backgroundCanvas" aria-hidden="true"></canvas>
-<main id="lockedScreen" class="screen"><section class="glass-card lock-card"><div class="status-chip"><span class="dot"></span> BIRTHDAY SYSTEM</div><div class="lock-icon">🔒</div><p class="eyebrow">ALIOS / ANNUAL SECURE EVENT</p><h1>Birthday System закрыт</h1><p class="muted">Система открывается только 15 августа по времени Ташкента. В остальные 364 дня доступ заблокирован.</p><div class="countdown"><div><span id="hours">00</span><small>дней / часов</small></div><div><span id="minutes">00</span><small>минут</small></div><div><span id="seconds">00</span><small>секунд</small></div></div><div class="progress"><div id="progressBar"></div></div><p id="lockStatus" class="tiny">Проверка времени системы...</p></section></main>
-<main id="birthdayScreen" class="screen hidden"><canvas id="confetti"></canvas><section class="birthday-content"><p class="access">ACCESS GRANTED • AUGUST 15</p><button id="ageButton" class="age">14</button><p class="hint">Подсказка: 👀 иногда стоит нажимать на странные вещи</p><h1 class="birthday-title">С ДНЁМ РОЖДЕНИЯ,<span>МУХАММАДАЛИ!</span></h1><p class="lead">Birthday System <b>14.0</b> активен только сегодня.</p><section class="terminal glass-card"><div class="terminal-top"><span></span><span></span><span></span><b>alios@birthday:~</b></div><pre id="terminalText"></pre></section><div class="actions"><button id="surpriseButton" class="primary-btn">Открыть подарок 🎁</button><button id="missionButton" class="ghost-btn">Mission 14 🚀</button></div>
-<section id="secret" class="glass-card secret hidden"><p class="eyebrow">PERSONAL MESSAGE</p><h2>Новый уровень открыт.</h2><p>Продолжай создавать проекты, понимать код глубже и доводить идеи до работающего результата.</p><div class="badges"><span>💻 CODE</span><span>🧠 IDEAS</span><span>🛠 BUILD</span><span>🚀 LEVEL 14</span></div></section>
-<section id="missionPanel" class="glass-card mission hidden"><p class="eyebrow">MISSION 14</p><h2>Четыре задания</h2><div class="mission-grid"><article><b>01</b><span>Сделать проект, которым будешь пользоваться.</span></article><article><b>02</b><span>Глубже изучить новую технологию.</span></article><article><b>03</b><span>Довести большой проект до версии 1.0.</span></article><article><b>04</b><span>15.08.2027 сравнить свой новый уровень.</span></article></div></section>
-<section id="easterEgg" class="easter-egg hidden"><div class="easter-window"><p class="eyebrow">HIDDEN MODULE FOUND</p><h2>AliOS Birthday System v14.0</h2><div class="boot-list"><span>CORE .............. ONLINE</span><span>CREATIVITY ........ 100%</span><span>CURIOSITY .......... 100%</span><span>CODING MODE ........ ENABLED</span><span>NEW LEVEL .......... UNLOCKED</span></div><button id="closeEgg" class="primary-btn">Закрыть модуль</button></div></section><footer>15.08.2012 • ANNUAL ACCESS WINDOW: 15 AUGUST</footer></section></main><script src="main.js?v=20260814-3"></script></body></html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#03050a">
+  <title>Muhammadali • Birthday System</title>
+  <link rel="stylesheet" href="main.css?v=20260814-5">
+</head>
+<body>
+  <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+
+  <nav class="system-nav" aria-label="Birthday navigation">
+    <a class="nav-pill" href="../?v=20260814-5">← Назад</a>
+    <button class="nav-pill" id="birthdayThemeButton" type="button" aria-label="Сменить тему">☀️ Светлая</button>
+  </nav>
+
+  <main id="lockedScreen" class="screen">
+    <section class="glass-card lock-card">
+      <div class="status-chip"><span class="dot"></span> BIRTHDAY SYSTEM</div>
+      <div class="lock-icon">🔒</div>
+      <p class="eyebrow">ALIOS / ANNUAL SECURE EVENT</p>
+      <h1>Birthday System закрыт</h1>
+      <p class="muted">Система открывается только 15 августа по времени Ташкента. В остальные дни доступ заблокирован.</p>
+      <div class="countdown">
+        <div><span id="hours">00</span><small>дней / часов</small></div>
+        <div><span id="minutes">00</span><small>минут</small></div>
+        <div><span id="seconds">00</span><small>секунд</small></div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <p id="lockStatus" class="tiny">Проверка времени системы...</p>
+      <button id="lockedEgg" class="egg-hint no-select" type="button" aria-label="Скрытая подсказка">👁️</button>
+      <p id="lockedEggText" class="tiny no-select">Иногда странные символы любят повторные нажатия.</p>
+    </section>
+  </main>
+
+  <main id="birthdayScreen" class="screen hidden">
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <section class="birthday-content">
+      <p class="access">ACCESS GRANTED • AUGUST 15</p>
+      <button id="ageButton" class="age no-select" type="button">14</button>
+      <p class="hint no-select">Подсказка: 👀 иногда стоит нажимать на странные вещи</p>
+      <h1 class="birthday-title no-select">С ДНЁМ РОЖДЕНИЯ,<span>МУХАММАДАЛИ!</span></h1>
+      <p class="lead">Birthday System <b>14.0</b> активен только сегодня.</p>
+
+      <section class="terminal glass-card">
+        <div class="terminal-top"><span></span><span></span><span></span><b>alios@birthday:~</b></div>
+        <pre id="terminalText"></pre>
+      </section>
+
+      <div class="actions">
+        <button id="surpriseButton" class="primary-btn" type="button">Открыть подарок 🎁</button>
+        <button id="missionButton" class="ghost-btn" type="button">Mission 14 🚀</button>
+      </div>
+
+      <section id="secret" class="glass-card secret hidden">
+        <p class="eyebrow">PERSONAL MESSAGE</p><h2>Новый уровень открыт.</h2>
+        <p>Продолжай создавать проекты, понимать код глубже и доводить идеи до работающего результата.</p>
+        <div class="badges"><span>💻 CODE</span><span>🧠 IDEAS</span><span>🛠 BUILD</span><span>🚀 LEVEL 14</span></div>
+      </section>
+
+      <section id="missionPanel" class="glass-card mission hidden">
+        <p class="eyebrow">MISSION 14</p><h2>Четыре задания</h2>
+        <div class="mission-grid">
+          <article><b>01</b><span>Сделать проект, которым будешь пользоваться.</span></article>
+          <article><b>02</b><span>Глубже изучить новую технологию.</span></article>
+          <article><b>03</b><span>Довести большой проект до версии 1.0.</span></article>
+          <article><b>04</b><span>15.08.2027 сравнить свой новый уровень.</span></article>
+        </div>
+      </section>
+
+      <section id="easterEgg" class="easter-egg hidden">
+        <div class="easter-window">
+          <p class="eyebrow">HIDDEN MODULE FOUND</p>
+          <h2>AliOS Birthday System v14.0</h2>
+          <div class="boot-list"><span>CORE .............. ONLINE</span><span>CREATIVITY ........ 100%</span><span>CURIOSITY .......... 100%</span><span>CODING MODE ........ ENABLED</span><span>NEW LEVEL .......... UNLOCKED</span></div>
+          <button id="closeEgg" class="primary-btn" type="button">Закрыть модуль</button>
+        </div>
+      </section>
+
+      <footer><button id="devTrigger" class="footer-trigger no-select" type="button">15.08.2012 • ALIOS BDAY</button></footer>
+    </section>
+  </main>
+
+  <section id="devPanel" class="dev-panel hidden" aria-live="polite">
+    <div class="dev-window glass-card">
+      <p class="eyebrow">DEVELOPER MODE</p>
+      <h2>Birthday Diagnostics</h2>
+      <div class="boot-list"><span>TIMEZONE ........ Asia/Tashkent</span><span>ANNUAL LOCK ..... ENABLED</span><span>THEME SYNC ...... ENABLED</span><span>COMMENTS ADMIN .. REQUIRES SERVER AUTH</span></div>
+      <button id="closeDevPanel" class="primary-btn" type="button">Закрыть</button>
+    </div>
+  </section>
+
+  <script src="main.js?v=20260814-5"></script>
+</body>
+</html>
