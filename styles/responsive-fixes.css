@@ -1,97 +1,51 @@
-/* v8 responsive layout — desktop + Xiaomi 14T Pro */
+/* v9 responsive layout — desktop + Xiaomi 14T Pro */
 
 .no-select,.dev-me-trigger,.birthday-emblem,.control,.theme-btn,.egg-trigger{
   -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent
 }
 
-/* HOME: restore portrait and keep the hero compact. */
 #home .header-content{
   display:grid!important;
-  grid-template-columns:minmax(290px, .82fr) minmax(0,1.18fr)!important;
+  grid-template-columns:minmax(290px,.82fr) minmax(0,1.18fr)!important;
   min-height:100dvh!important;
   align-items:center!important;
   gap:clamp(2rem,5vw,5rem);
-  padding:clamp(24px,4vw,64px) clamp(28px,6vw,90px) 96px!important;
+  padding:clamp(24px,4vw,64px) clamp(28px,6vw,90px) 96px!important
 }
 #home .left-header{display:flex!important;align-items:center;justify-content:center;height:auto!important;padding:0!important}
 #home .left-header .h-shape{display:none!important}
 #home .left-header .image{
   width:min(360px,100%);aspect-ratio:4/5;height:auto!important;margin:0!important;border-radius:34px!important;
-  overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.24);border:1px solid rgba(127,127,127,.14)
+  overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.24);border:1px solid rgba(127,127,127,.14);cursor:pointer
 }
-#home .left-header .image img{width:100%;height:100%;object-fit:cover;filter:none!important;transition:transform .45s ease}
-#home .left-header .image:hover img{transform:scale(1.025)}
+#home .left-header .image img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(100%) contrast(1.04)!important;
+  transition:filter .38s ease,transform .45s ease
+}
+#home .left-header .image:hover img,
+#home .left-header .image:focus-within img,
+#home .left-header .image.photo-color img{
+  filter:grayscale(0%) contrast(1)!important;transform:scale(1.025)
+}
 #home .right-header{padding:0!important;margin:0!important;width:100%;max-width:830px;justify-content:center;text-align:left}
 #home .right-header .name{font-size:clamp(2.65rem,5.2vw,5rem)!important;line-height:1.05!important;overflow-wrap:anywhere;margin:0}
 #home .right-header p{max-width:780px;margin-top:1.3rem;line-height:1.8}
-
-/* Developer badge always stays away from controls. */
-.dev-mode-indicator{
-  position:fixed!important;z-index:10001!important;top:max(14px,env(safe-area-inset-top))!important;right:14px!important;
-  left:auto!important;bottom:auto!important;padding:8px 12px!important;font-size:9px!important;white-space:nowrap;pointer-events:none
-}
-
-/* Easter egg announcement appears at the top. */
-.egg-toast{
-  top:max(14px,env(safe-area-inset-top))!important;bottom:auto!important;left:50%!important;
-  transform:translateX(-50%) translateY(-18px)!important;max-width:min(92vw,560px);text-align:center
-}
-.egg-toast.show{transform:translateX(-50%) translateY(0)!important}
-.portfolio-dev-mode .egg-toast{top:max(58px,calc(env(safe-area-inset-top) + 42px))!important}
-
-@media(min-width:769px){
-  .controls{gap:4px}.controls .control{margin:.45rem 0!important}
-}
-
-/* Phones/tablets, tuned around ~393–430 CSS px widths used by Xiaomi 14T Pro. */
+.dev-mode-indicator{position:fixed!important;z-index:10001!important;top:max(14px,env(safe-area-inset-top))!important;right:14px!important;left:auto!important;bottom:auto!important;padding:8px 12px!important;font-size:9px!important;white-space:nowrap;pointer-events:none}
+.egg-toast{top:max(14px,env(safe-area-inset-top))!important;bottom:auto!important;left:50%!important;transform:translateX(-50%) translateY(-18px)!important;max-width:min(92vw,560px);text-align:center}.egg-toast.show{transform:translateX(-50%) translateY(0)!important}.portfolio-dev-mode .egg-toast{top:max(58px,calc(env(safe-area-inset-top) + 42px))!important}
+@media(min-width:769px){.controls{gap:4px}.controls .control{margin:.45rem 0!important}}
 @media(max-width:768px){
-  html,body{max-width:100%;overflow-x:hidden}
-  header,#home,#home .header-content{min-height:100dvh!important}
-  #home .header-content{
-    grid-template-columns:1fr!important;grid-template-rows:auto auto;gap:18px!important;
-    padding:76px 18px 112px!important;align-content:center!important;text-align:center
-  }
+  html,body{max-width:100%;overflow-x:hidden}header,#home,#home .header-content{min-height:100dvh!important}
+  #home .header-content{grid-template-columns:1fr!important;grid-template-rows:auto auto;gap:18px!important;padding:72px 18px 112px!important;align-content:center!important;text-align:center}
   #home .left-header{order:1!important;width:100%}
-  #home .left-header .image{
-    width:min(46vw,190px)!important;min-width:128px;aspect-ratio:1/1!important;border-radius:50%!important;
-    box-shadow:0 16px 50px rgba(0,0,0,.18)
-  }
+  #home .left-header .image{width:min(46vw,190px)!important;min-width:128px;aspect-ratio:1/1!important;border-radius:50%!important;box-shadow:0 16px 50px rgba(0,0,0,.18)}
   #home .right-header{order:2!important;text-align:center!important;align-items:center!important;min-height:0!important;padding:0!important}
   #home .right-header .name{font-size:clamp(2rem,10vw,3.15rem)!important;line-height:1.08!important;margin:0 auto!important;max-width:100%}
   #home .right-header p{font-size:.92rem!important;line-height:1.55rem!important;margin:1rem auto 0!important;max-width:560px}
   section{padding-left:18px!important;padding-right:18px!important;padding-bottom:112px!important}
-
-  .controls{
-    position:fixed!important;z-index:9990!important;left:50%!important;right:auto!important;top:auto!important;
-    bottom:max(12px,env(safe-area-inset-bottom))!important;transform:translateX(-50%)!important;
-    width:min(calc(100vw - 22px),430px)!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;
-    gap:7px!important;padding:8px!important;border-radius:26px!important;background:color-mix(in srgb,var(--color-primary) 86%,transparent)!important;
-    -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 12px 38px rgba(0,0,0,.22)
-  }
-  .controls .control{width:100%!important;max-width:58px!important;aspect-ratio:1!important;height:auto!important;margin:0 auto!important;padding:0!important}
-  .controls .control i{font-size:1rem!important}
+  .controls{position:fixed!important;z-index:9990!important;left:50%!important;right:auto!important;top:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;transform:translateX(-50%)!important;width:min(calc(100vw - 22px),430px)!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:7px!important;padding:8px!important;border-radius:26px!important;background:color-mix(in srgb,var(--color-primary) 86%,transparent)!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 12px 38px rgba(0,0,0,.22)}
+  .controls .control{width:100%!important;max-width:58px!important;aspect-ratio:1!important;height:auto!important;margin:0 auto!important;padding:0!important}.controls .control i{font-size:1rem!important}
   .theme-btn{width:52px!important;height:52px!important;top:max(72px,env(safe-area-inset-top))!important;right:14px!important}
-
-  .birthday-section{padding-top:42px!important;padding-bottom:112px!important}
-  .birthday-wrap{width:100%!important;padding-bottom:0!important}
-  .birthday-hero{display:flex!important;flex-direction:column!important;gap:18px!important;min-height:0!important}
-  .birthday-copy{width:100%;text-align:center}
-  .birthday-copy h2{font-size:clamp(2.3rem,12vw,3.8rem)!important}
-  .birthday-logo-card{width:100%!important;min-height:300px!important;border-radius:26px!important}
-  .birthday-emblem{width:min(62vw,220px)!important;height:min(62vw,220px)!important}
-  .birthday-emblem .cake{font-size:clamp(4.6rem,22vw,6.2rem)!important}
-  .birthday-countdown-card{width:100%!important;padding:18px!important;border-radius:24px!important}
-  .birthday-countdown{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
-  .birthday-time-box{padding:16px 8px!important;min-width:0}
-  .birthday-mini-grid{grid-template-columns:1fr!important;gap:10px!important}
-  .birthday-mini-card{width:100%!important;min-width:0}
-  .dev-mode-indicator{top:max(12px,env(safe-area-inset-top))!important;right:10px!important;font-size:8px!important;padding:7px 10px!important}
+  .birthday-section{padding-top:42px!important;padding-bottom:112px!important}.birthday-wrap{width:100%!important;padding-bottom:0!important}.birthday-hero{display:flex!important;flex-direction:column!important;gap:18px!important;min-height:0!important}.birthday-copy{width:100%;text-align:center}.birthday-copy h2{font-size:clamp(2.3rem,12vw,3.8rem)!important}.birthday-logo-card{width:100%!important;min-height:300px!important;border-radius:26px!important}.birthday-emblem{width:min(62vw,220px)!important;height:min(62vw,220px)!important}.birthday-emblem .cake{font-size:clamp(4.6rem,22vw,6.2rem)!important}.birthday-countdown-card{width:100%!important;padding:18px!important;border-radius:24px!important}.birthday-countdown{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.birthday-time-box{padding:16px 8px!important;min-width:0}.birthday-mini-grid{grid-template-columns:1fr!important;gap:10px!important}.birthday-mini-card{width:100%!important;min-width:0}.dev-mode-indicator{top:max(12px,env(safe-area-inset-top))!important;right:10px!important;font-size:8px!important;padding:7px 10px!important}
 }
-
-@media(max-width:390px){
-  #home .header-content{padding-left:14px!important;padding-right:14px!important}
-  #home .left-header .image{width:145px!important}
-  #home .right-header .name{font-size:clamp(1.86rem,9.8vw,2.75rem)!important}
-  .controls{gap:5px!important;padding:7px!important}.controls .control{max-width:52px!important}
-  .birthday-countdown-card{padding:15px!important}.birthday-time-box strong{font-size:1.65rem!important}
-}
+@media(max-width:390px){#home .header-content{padding-left:14px!important;padding-right:14px!important}#home .left-header .image{width:145px!important}#home .right-header .name{font-size:clamp(1.86rem,9.8vw,2.75rem)!important}.controls{gap:5px!important;padding:7px!important}.controls .control{max-width:52px!important}.birthday-countdown-card{padding:15px!important}.birthday-time-box strong{font-size:1.65rem!important}}
