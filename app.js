@@ -1,7 +1,7 @@
 (function () {
     const birthdayCss = document.createElement('link');
     birthdayCss.rel = 'stylesheet';
-    birthdayCss.href = 'styles/birthday-section.css';
+    birthdayCss.href = 'styles/birthday-section.css?v=20260814-1155';
     document.head.appendChild(birthdayCss);
 
     const main = document.querySelector('main');
@@ -39,7 +39,7 @@
                         <div class="birthday-time-box"><strong id="birthdaySeconds">--</strong><span>секунд</span></div>
                     </div>
                     <div class="birthday-actions">
-                        <a class="birthday-link" href="birthday/">Открыть Birthday System <span>→</span></a>
+                        <a class="birthday-link" href="birthday/?v=20260814-1155">Открыть Birthday System <span>→</span></a>
                         <button class="birthday-secondary-btn" id="birthdaySurpriseButton" type="button">Маленький сюрприз 🎁</button>
                     </div>
                     <div id="birthdayCelebration" class="birthday-celebration">
@@ -141,5 +141,5 @@ document.querySelector('.contact-form').addEventListener('submit', async functio
 })();
 
 const birthdayScript = document.createElement('script');
-birthdayScript.src = 'birthday-section.js';
+birthdayScript.src = 'birthday-section.js?v=20260814-1155';
 document.body.appendChild(birthdayScript);
