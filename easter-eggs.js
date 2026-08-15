@@ -1,5 +1,5 @@
 (()=>{
- const css=document.createElement('link');css.rel='stylesheet';css.href='styles/easter-eggs.css?v=20260814-8';document.head.appendChild(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='styles/easter-eggs.css?v=20260815-9';document.head.appendChild(css);
  const toast=document.createElement('div');toast.className='egg-toast';document.body.appendChild(toast);
  let timer;
  function say(t){toast.textContent=t;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),3000)}
@@ -16,8 +16,11 @@
  clicks(document.querySelector('#portfolio .main-title'),8,reactor);
  clicks(document.querySelector('#contact .main-title'),6,signal);
  let me=null;document.querySelectorAll('#contact .main-title span').forEach(s=>{if(s.textContent.trim().toLowerCase()==='me')me=s});
- clicks(me,5,()=>{localStorage.setItem('portfolio-dev-mode','1');document.body.classList.add('portfolio-dev-mode');say('🥚 ПАСХАЛКА НАЙДЕНА • DEVELOPER MODE ⚡');if(!document.querySelector('.dev-mode-indicator')){const d=document.createElement('div');d.className='egg-secret-badge dev-mode-indicator';d.textContent='DEV MODE • ON';document.body.appendChild(d)}});
- if(localStorage.getItem('portfolio-dev-mode')==='1'){document.body.classList.add('portfolio-dev-mode');if(!document.querySelector('.dev-mode-indicator')){const d=document.createElement('div');d.className='egg-secret-badge dev-mode-indicator';d.textContent='DEV MODE • ON';document.body.appendChild(d)}}
+ /* Dev Mode is session-only. Closing the browser/tab session resets it. */
+ if(localStorage.getItem('portfolio-dev-mode')==='1'){localStorage.removeItem('portfolio-dev-mode');sessionStorage.setItem('portfolio-dev-mode','1')}
+ function enableDevMode(){sessionStorage.setItem('portfolio-dev-mode','1');document.body.classList.add('portfolio-dev-mode');say('🥚 ПАСХАЛКА НАЙДЕНА • DEVELOPER MODE ⚡');if(!document.querySelector('.dev-mode-indicator')){const d=document.createElement('div');d.className='egg-secret-badge dev-mode-indicator';d.textContent='DEV MODE • ON';document.body.appendChild(d)}}
+ clicks(me,5,enableDevMode);
+ if(sessionStorage.getItem('portfolio-dev-mode')==='1'){document.body.classList.add('portfolio-dev-mode');if(!document.querySelector('.dev-mode-indicator')){const d=document.createElement('div');d.className='egg-secret-badge dev-mode-indicator';d.textContent='DEV MODE • ON';document.body.appendChild(d)}}
  let keys='';addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;keys=(keys+e.key.toLowerCase()).slice(-5);if(keys==='alios'){say('🥚 PC SECRET FOUND • ALIOS TERMINAL');planeGame();keys=''}});
  window.AliEggs={say,arcade,planeGame,memoryGame,reactor,signal};
 })();
